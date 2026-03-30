@@ -3,6 +3,53 @@
 #Include <UIA>
 ; 設定當前腳本適用於 Notepad++
 #HotIf WinActive("ahk_class Notepad++")
+
+;#########TRAYICON - Base64 Version;################
+;#########步驟 1：線上轉換 .ico 為 Base64;################
+;################
+;################
+Base64ToIcon(base64String) {
+    ; Base64 解碼
+    size := 0
+    DllCall("Crypt32\CryptStringToBinary"
+        , "Str", base64String
+        , "UInt", 0
+        , "UInt", 0x1  ; CRYPT_STRING_BASE64
+        , "Ptr", 0
+        , "UInt*", &size
+        , "Ptr", 0
+        , "Ptr", 0)
+    
+    buf := Buffer(size)
+    DllCall("Crypt32\CryptStringToBinary"
+        , "Str", base64String
+        , "UInt", 0
+        , "UInt", 0x1
+        , "Ptr", buf
+        , "UInt*", &size
+        , "Ptr", 0
+        , "Ptr", 0)
+    
+    ; 寫入臨時檔案
+    iconPath := A_Temp "\This_icon.png"
+    f := FileOpen(iconPath, "w")
+    f.RawWrite(buf, size)
+    f.Close()
+    
+    return iconPath
+}
+
+; 在這裡貼上你的 Base64 字串（可以分多行）
+iconBase64 := "
+(
+iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAsQAAALEBxi1JjQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAATqSURBVFiFrZd7TBRXFIe/dZedXZ/ISlG05e0L0VIkVARCLKhYxcSikUZRG7EWi2JEo6ZFpWIqvkBEKSpIomhtq219oTXFKsa2VtSgiKBULAZTRRHYhZ3dZfsHhQICu0v3l0wyc+7vnvPdM5M7M2CZ5IJSmSKXCzVyQXgpKJW7ALmFOdpJaolZUCq3O7t5LFm2PrFfYOg0xePysrHq+jo7g15/vqcAEkvMckGoWb9tzwBbOxUANdXP2bImtkbUagf2FEDW5txoyixqtbQUB7BVDULUam3NmUsXi20bNN4sefCawXukO8bkaCRr9pNy+ESnmePmzWr1dJWjKwBZx8C/5i4LmVLH+Z0BdQsAYHyU2HouuG+iWtOIMTm620TVmkYEGymNZRtaYxLnBFO8nQO0Vfxifxw35yLqDd365DIpq6MnmixoMUDS2lCS1oZanNhqAC2qV4vsPXyd42dLKSmrQqc34DRsEFMCXVm+cDweLirTSTpRL3NMV/94zPBJ6Vy5I2Ppqs2cyS/gyvVbJO3aT4MwBv+IQ+w4cK1HACY78PvtSmZ98i0btuxE2bs36RkZlBYXIzZqcPX0IiI8nKzcE8THLkErGlgfE2A9AFFnYG7s96zb+CV/VVaSmrabgYsTGLIqE4lcgfrOb6Rlb2FcQQFpmTnMnx3O1CA33hkzxGyAbm/BsR+LcHzLFTcPD1J27WTovp+xnbEQmWow0n629J0wBce0PG5XVXPu3FkWRMew9atfzS5uEuCHiw8JC5/NwawsBsxdjtzRud34JJWM/T522MUmk5NziLDp4eRduo/B0GQdgNJHL3B1c+NuyX16+wS3G/O3lbHRXUHKIxHF8HFo1GoMBj2CQuDvarV1AFrUqFFDUxM+/aWkjlISMFDG1hEKYosbuFtvAIkEqY0coxGM5ryWzAUY4aKi/OFDxnl5oSn8hdt1zbthykgFcfcaWq+15cUIchtkMhnaxkbeUPWxDsDMEDdOn/yaBVFR1H2XgaaijFUlDcwv0nCjtrm4USfyMjWemGWfknfmFFODRyCVmtVY0wBzpnvyrKqCP8vLiY+P5+nKGTw7eYCix1U0qWupv3aBJx8H4+fiyHshIRzct5uVH/maXdwkgCCXcSRlJtuTEnCwtycjfQ/D712iMsqXB+GuSHMSWbloHnHLV6ATdfgHBvHZjsuoNSL3y5+bBWByJ/R7exgn9n1A5IrVeHn7EhkRyaaEBCS9JDyprCT/Qh5ztm5mkErF3uxc9uz8EtfAVBoatNYBAAjwdaL4p6Vk5t7gUHoixaVVaEUdTm/aMzXIhcJT0Rw7fZeYRR/iOWo0o1X9iZvgSeTRfG4V3ug292ufZN4j3dt9kJirpiYjfuGZ9BXhdNRk+shlXCx7QuTxAp6/qu1Yq1WmO+D0effjFV8AUKfWotfpGT90MH3kzWlDPIZydE4A72dfaBL1+onA1Y7TrdYBgJraRkLnZhPsYM+2ML/W+OXyKqZl5anVon46cMkyADM70FMIq3bgdQgHtoX9ty90BmH+lmWBbPsryDuygO35t1h3vrA1HuQ6hIixLgqljSyVTh5K482SB0aa/3KsdozycDeumeStNyZHGxMn+4h9BZsKYHBLUZN/Rv9Xr2pqCH53PBOcHcSiqhdP67U6P+BpZ16rr77tIZNKvqHNylv0D0maIY9V2CgeAAAAAElFTkSuQmCC
+)"
+
+; 設定圖示
+iconPath := Base64ToIcon(iconBase64)
+TraySetIcon(iconPath)
+
+
 F2::
 {
     try {
