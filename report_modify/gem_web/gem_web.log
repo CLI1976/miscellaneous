@@ -1,0 +1,43 @@
+[15:36:26] 輸入文字長度：661 字元
+[15:36:27] 已連接到現有的 Gemini Chrome
+[15:36:27] 導航至 https://gemini.google.com/gem/ecabec39c76d
+[15:36:29] 等待輸入框...
+[15:36:29] 輸入框已找到
+[15:36:29] 設定剪貼簿...
+[15:36:31] 貼上完成
+[15:36:31] 已點擊送出按鈕
+[15:36:31] 等待回應完成...
+[15:36:33] [例外]
+Traceback (most recent call last):
+  File "D:\MyCode\playground\gem_web.py", line 160, in <module>
+    asyncio.run(run(text))
+  File "asyncio\runners.py", line 194, in run
+  File "asyncio\runners.py", line 118, in run
+  File "asyncio\base_events.py", line 687, in run_until_complete
+  File "D:\MyCode\playground\gem_web.py", line 115, in run
+    await page.wait_for_function(
+  File "C:\Green software\PortablePython\Lib\site-packages\playwright\async_api\_generated.py", line 11537, in wait_for_function
+    await self._impl_obj.wait_for_function(
+  File "C:\Green software\PortablePython\Lib\site-packages\playwright\_impl\_page.py", line 1110, in wait_for_function
+    return await self._main_frame.wait_for_function(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Green software\PortablePython\Lib\site-packages\playwright\_impl\_frame.py", line 878, in wait_for_function
+    await self._channel.send("waitForFunction", self._timeout, params)
+  File "C:\Green software\PortablePython\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Green software\PortablePython\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.wait_for_function: EvalError: Evaluating a string as JavaScript violates this document's Trusted Type assignment requirements.
+    at eval (<anonymous>)
+    at predicate (eval at evaluate (:290:30), <anonymous>:4:56)
+    at next (eval at evaluate (:290:30), <anonymous>:29:29)
+    at c (https://www.gstatic.com/_/mss/boq-bard-web/_/js/k=boq-bard-web.BardChatUi.zh_TW.6Yrdxvc4I2I.2018.O/ck=boq-bard-web.BardChatUi.3U4xiMrDX7w.L.B1.O/am=ITQIiIHE9RtBXwAIgG-AAQ/d=1/exm=_b/excm=_b/ed=1/br=1/wt=2/ujg=1/rs=AL3bBk2JgCFyQ0KKYSLGmvNePQJ4EKXppw/ee=DGWCxb:CgYiQ;Pjplud:PoEs9b;QGR0gd:Mlhmy;ScI3Yc:e7Hzgb;YIZmRd:A1yn5d;cEt90b:ws9Tlc;dowIGb:ebZ3mb;wNp4Gc:k56rsf/dti=1/m=LQaXg?wli=BardChatUi.MJXKBJrmmqM.libheifWasm.O%3A%3BBardChatUi.usdjO5GYwnM.loadC2PAExtractorWasm.O%3A%3BBardChatUi.Rl1I_Axcbh0.loadWasmSipCoca.O%3A%3B:5081:260)
+    at https://www.gstatic.com/_/mss/boq-bard-web/_/js/k=boq-bard-web.BardChatUi.zh_TW.6Yrdxvc4I2I.2018.O/ck=boq-bard-web.BardChatUi.3U4xiMrDX7w.L.B1.O/am=ITQIiIHE9RtBXwAIgG-AAQ/d=1/exm=_b/excm=_b/ed=1/br=1/wt=2/ujg=1/rs=AL3bBk2JgCFyQ0KKYSLGmvNePQJ4EKXppw/ee=DGWCxb:CgYiQ;Pjplud:PoEs9b;QGR0gd:Mlhmy;ScI3Yc:e7Hzgb;YIZmRd:A1yn5d;cEt90b:ws9Tlc;dowIGb:ebZ3mb;wNp4Gc:k56rsf/dti=1/m=LQaXg?wli=BardChatUi.MJXKBJrmmqM.libheifWasm.O%3A%3BBardChatUi.usdjO5GYwnM.loadC2PAExtractorWasm.O%3A%3BBardChatUi.Rl1I_Axcbh0.loadWasmSipCoca.O%3A%3B:596:60
+    at v.invokeTask (https://www.gstatic.com/_/mss/boq-bard-web/_/js/k=boq-bard-web.BardChatUi.zh_TW.6Yrdxvc4I2I.2018.O/ck=boq-bard-web.BardChatUi.3U4xiMrDX7w.L.B1.O/am=ITQIiIHE9RtBXwAIgG-AAQ/d=1/exm=_b/excm=_b/ed=1/br=1/wt=2/ujg=1/rs=AL3bBk2JgCFyQ0KKYSLGmvNePQJ4EKXppw/ee=DGWCxb:CgYiQ;Pjplud:PoEs9b;QGR0gd:Mlhmy;ScI3Yc:e7Hzgb;YIZmRd:A1yn5d;cEt90b:ws9Tlc;dowIGb:ebZ3mb;wNp4Gc:k56rsf/dti=1/m=LQaXg?wli=BardChatUi.MJXKBJrmmqM.libheifWasm.O%3A%3BBardChatUi.usdjO5GYwnM.loadC2PAExtractorWasm.O%3A%3BBardChatUi.Rl1I_Axcbh0.loadWasmSipCoca.O%3A%3B:568:440)
+    at h.runTask (https://www.gstatic.com/_/mss/boq-bard-web/_/js/k=boq-bard-web.BardChatUi.zh_TW.6Yrdxvc4I2I.2018.O/ck=boq-bard-web.BardChatUi.3U4xiMrDX7w.L.B1.O/am=ITQIiIHE9RtBXwAIgG-AAQ/d=1/exm=_b/excm=_b/ed=1/br=1/wt=2/ujg=1/rs=AL3bBk2JgCFyQ0KKYSLGmvNePQJ4EKXppw/ee=DGWCxb:CgYiQ;Pjplud:PoEs9b;QGR0gd:Mlhmy;ScI3Yc:e7Hzgb;YIZmRd:A1yn5d;cEt90b:ws9Tlc;dowIGb:ebZ3mb;wNp4Gc:k56rsf/dti=1/m=LQaXg?wli=BardChatUi.MJXKBJrmmqM.libheifWasm.O%3A%3BBardChatUi.usdjO5GYwnM.loadC2PAExtractorWasm.O%3A%3BBardChatUi.Rl1I_Axcbh0.loadWasmSipCoca.O%3A%3B:561:199)
+    at invokeTask (https://www.gstatic.com/_/mss/boq-bard-web/_/js/k=boq-bard-web.BardChatUi.zh_TW.6Yrdxvc4I2I.2018.O/ck=boq-bard-web.BardChatUi.3U4xiMrDX7w.L.B1.O/am=ITQIiIHE9RtBXwAIgG-AAQ/d=1/exm=_b/excm=_b/ed=1/br=1/wt=2/ujg=1/rs=AL3bBk2JgCFyQ0KKYSLGmvNePQJ4EKXppw/ee=DGWCxb:CgYiQ;Pjplud:PoEs9b;QGR0gd:Mlhmy;ScI3Yc:e7Hzgb;YIZmRd:A1yn5d;cEt90b:ws9Tlc;dowIGb:ebZ3mb;wNp4Gc:k56rsf/dti=1/m=LQaXg?wli=BardChatUi.MJXKBJrmmqM.libheifWasm.O%3A%3BBardChatUi.usdjO5GYwnM.loadC2PAExtractorWasm.O%3A%3BBardChatUi.Rl1I_Axcbh0.loadWasmSipCoca.O%3A%3B:570:302)
+    at https://www.gstatic.com/_/mss/boq-bard-web/_/js/k=boq-bard-web.BardChatUi.zh_TW.6Yrdxvc4I2I.2018.O/ck=boq-bard-web.BardChatUi.3U4xiMrDX7w.L.B1.O/am=ITQIiIHE9RtBXwAIgG-AAQ/d=1/exm=_b/excm=_b/ed=1/br=1/wt=2/ujg=1/rs=AL3bBk2JgCFyQ0KKYSLGmvNePQJ4EKXppw/ee=DGWCxb:CgYiQ;Pjplud:PoEs9b;QGR0gd:Mlhmy;ScI3Yc:e7Hzgb;YIZmRd:A1yn5d;cEt90b:ws9Tlc;dowIGb:ebZ3mb;wNp4Gc:k56rsf/dti=1/m=LQaXg?wli=BardChatUi.MJXKBJrmmqM.libheifWasm.O%3A%3BBardChatUi.usdjO5GYwnM.loadC2PAExtractorWasm.O%3A%3BBardChatUi.Rl1I_Axcbh0.loadWasmSipCoca.O%3A%3B:570:194
+    at https://www.gstatic.com/_/mss/boq-bard-web/_/js/k=boq-bard-web.BardChatUi.zh_TW.6Yrdxvc4I2I.2018.O/ck=boq-bard-web.BardChatUi.3U4xiMrDX7w.L.B1.O/am=ITQIiIHE9RtBXwAIgG-AAQ/d=1/exm=_b/excm=_b/ed=1/br=1/wt=2/ujg=1/rs=AL3bBk2JgCFyQ0KKYSLGmvNePQJ4EKXppw/ee=DGWCxb:CgYiQ;Pjplud:PoEs9b;QGR0gd:Mlhmy;ScI3Yc:e7Hzgb;YIZmRd:A1yn5d;cEt90b:ws9Tlc;dowIGb:ebZ3mb;wNp4Gc:k56rsf/dti=1/m=LQaXg?wli=BardChatUi.MJXKBJrmmqM.libheifWasm.O%3A%3BBardChatUi.usdjO5GYwnM.loadC2PAExtractorWasm.O%3A%3BBardChatUi.Rl1I_Axcbh0.loadWasmSipCoca.O%3A%3B:595:88
+    at https://www.gstatic.com/_/mss/boq-bard-web/_/js/k=boq-bard-web.BardChatUi.zh_TW.6Yrdxvc4I2I.2018.O/am=ITQIiIHE9RtBXwAIgG-AAQ/d=1/excm=_b/ed=1/dg=0/br=1/wt=2/ujg=1/rs=AL3bBk0VasxbcP6qm-oF6ztqQeKwqeHt1Q/ee=DGWCxb:CgYiQ;Pjplud:PoEs9b;QGR0gd:Mlhmy;ScI3Yc:e7Hzgb;YIZmRd:A1yn5d;cEt90b:ws9Tlc;dowIGb:ebZ3mb;wNp4Gc:k56rsf/dti=1/m=_b?wli=BardChatUi.MJXKBJrmmqM.libheifWasm.O%3A%3BBardChatUi.usdjO5GYwnM.loadC2PAExtractorWasm.O%3A%3BBardChatUi.Rl1I_Axcbh0.loadWasmSipCoca.O%3A%3B:95:130
+
