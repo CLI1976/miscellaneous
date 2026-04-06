@@ -1,0 +1,90 @@
+{
+  "settings": {
+    "lang": "TW",
+    "style": "watercolor"
+  },
+  "安妮": {
+    "description_template": "Anne: A slim young girl (11 years old) with distinctive red hair styled in two long braids tied with GREEN RIBBONS (identifying feature), bright green eyes, round freckled face, wearing a simple grey Victorian dress with white collar, energetic and expressive demeanor",
+    "hair": "distinctive red hair in two long braids",
+    "eyes": "bright green eyes",
+    "face": "round face with freckles",
+    "build": "slim young girl, about 11 years old",
+    "clothing": "simple grey Victorian dress with white collar",
+    "unique_accessory": "green ribbon hair ties on braids",
+    "personality": "energetic and expressive",
+    "age_group": "child",
+    "distinctive_features": "red braided hair, freckles, green ribbons",
+    "zh_name": "安妮",
+    "en_name": "Anne"
+  },
+  "戴安娜": {
+    "description_template": "Diana: A young girl (11 years old) with neat black hair styled in a refined way, dark brown eyes, elegant features, smooth complexion, wearing PEARL PENDANT NECKLACE (identifying feature), well-made Victorian dress in dark blue colors, composed and graceful posture",
+    "hair": "neat black hair in a refined style",
+    "eyes": "dark brown eyes",
+    "face": "elegant features, smooth complexion",
+    "build": "young girl, about 11 years old, graceful posture",
+    "clothing": "well-made Victorian dress in dark blue or burgundy colors",
+    "unique_accessory": "pearl pendant necklace",
+    "personality": "composed and elegant",
+    "age_group": "child",
+    "distinctive_features": "refined appearance, dark hair, pearl necklace",
+    "zh_name": "戴安娜",
+    "en_name": "Diana"
+  },
+  "瑪麗亞": {
+    "description_template": "Marilla: A middle-aged woman (50s) with grey hair pulled back in a strict bun, stern but kind grey-blue eyes, angular face with defined features, wearing SMALL CAMEO BROOCH at collar (identifying feature), practical Victorian dress in dark grey or black with high collar, upright and proper posture",
+    "hair": "grey hair in a strict bun",
+    "eyes": "stern but kind grey-blue eyes",
+    "face": "angular face with defined features",
+    "build": "middle-aged woman, upright posture",
+    "clothing": "practical Victorian dress in dark grey or black with high collar",
+    "unique_accessory": "small cameo brooch at collar",
+    "personality": "stern but caring",
+    "age_group": "middle-aged",
+    "distinctive_features": "grey hair bun, stern expression, cameo brooch",
+    "zh_name": "瑪麗亞",
+    "en_name": "Marilla"
+  },
+  "馬修": {
+    "description_template": "Matthew: An elderly man (60s) with weathered face, kind brown eyes, grey-white beard, wearing OLD POCKET WATCH with visible chain (identifying feature), simple farmer's clothing with suspenders and worn hat, gentle and quiet demeanor",
+    "hair": "grey-white hair, slightly disheveled",
+    "eyes": "kind brown eyes",
+    "face": "weathered face with lines, gentle expression",
+    "build": "elderly man, slightly stooped posture",
+    "clothing": "simple farmer's clothing, suspenders, worn hat",
+    "unique_accessory": "old pocket watch with visible chain",
+    "personality": "gentle and quiet",
+    "age_group": "elderly",
+    "distinctive_features": "grey beard, kind eyes, farmer appearance, pocket watch",
+    "zh_name": "馬修",
+    "en_name": "Matthew"
+  },
+  "巴利夫人": {
+    "description_template": "Mrs. Barry: A stern middle-aged woman (40s) with dark hair pulled back tightly, sharp eyes, prominent features, wearing SILVER BROOCH at high collar (identifying feature), formal Victorian dress in dark colors, rigid and proper posture",
+    "hair": "dark hair pulled back tightly",
+    "eyes": "sharp dark eyes",
+    "face": "prominent features, stern expression",
+    "build": "middle-aged woman, rigid posture",
+    "clothing": "formal Victorian dress in dark colors, high collar",
+    "unique_accessory": "silver brooch at high collar",
+    "personality": "strict and proper",
+    "age_group": "middle-aged",
+    "distinctive_features": "stern expression, rigid posture, silver brooch",
+    "zh_name": "巴利夫人",
+    "en_name": "Mrs. Barry"
+  },
+  "蜜妮": {
+    "description_template": "Minnie May: A small child (3-4 years old) with soft blonde curls, rosy cheeks, wearing a simple child's nightgown, looking ill and pale",
+    "hair": "soft blonde curls",
+    "eyes": "light eyes (currently closed or barely open due to illness)",
+    "face": "rosy cheeks (when healthy), pale when ill",
+    "build": "small child, about 3-4 years old",
+    "clothing": "simple white nightgown",
+    "unique_accessory": null,
+    "personality": "young and innocent",
+    "age_group": "toddler",
+    "distinctive_features": "blonde curls, very young",
+    "zh_name": "蜜妮",
+    "en_name": "Minnie May"
+  }
+}
