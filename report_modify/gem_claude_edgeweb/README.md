@@ -40,7 +40,7 @@
 在桌面建立 Microsoft Edge 的捷徑，目標設為：
 
 ```
-"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --remote-debugging-port=9222 --user-data-dir="C:\EdgeDebugProfile"
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"  --remote-debugging-port=9222 --user-data-dir="C:\EdgeDebugProfile" --download-default-directory="C:\Users\%USERNAME%\Downloads" --safebrowsing-disable-download-protection
 ```
 
 > **注意**：64-bit Edge 路徑為 `C:\Program Files\Microsoft\Edge\Application\msedge.exe`（無 `(x86)`）。
